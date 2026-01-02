@@ -3,6 +3,7 @@ FROM node:18-slim
 
 # Install Chromium dependencies
 RUN apt-get update && apt-get install -y \
+    chromium \
     ca-certificates \
     fonts-liberation \
     libasound2 \
@@ -15,7 +16,6 @@ RUN apt-get update && apt-get install -y \
     libexpat1 \
     libfontconfig1 \
     libgbm1 \
-    libgcc1 \
     libglib2.0-0 \
     libgtk-3-0 \
     libnspr4 \
@@ -39,7 +39,6 @@ RUN apt-get update && apt-get install -y \
     lsb-release \
     wget \
     xdg-utils \
-    libgobject-2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
@@ -56,6 +55,7 @@ COPY . .
 
 # Set environment variable for puppeteer
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=false
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 
 # Start the application
 CMD ["node", "index.js"]
