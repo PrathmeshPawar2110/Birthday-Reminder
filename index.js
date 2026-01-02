@@ -3,7 +3,7 @@ const qrcode = require('qrcode-terminal');
 const schedule = require('node-schedule');
 
 // Configuration
-const FRIEND_PHONE_NUMBER = '919370116429'; // Without + or 'whatsapp:'
+const FRIEND_PHONE_NUMBER = '919930582782'; // Without + or 'whatsapp:'
 const FRIEND_NAME = 'Ishita';
 const BIRTHDAY_DATE = '2026-02-21'; // YYYY-MM-DD
 
